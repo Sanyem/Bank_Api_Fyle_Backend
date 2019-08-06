@@ -27,8 +27,8 @@ echo $ifsc_res | python -m json.tool
 # Sample values for limit, offset, bank, city
 limit=10
 offset=0
-bank="INDIAN BANK"
-city="RAIPUR"
+bank="CENTRAL BANK OF INDIA"
+city="ROORKEE"
 name_city=`curl -G -s -X GET "$SITE_BASE_URL/bank/" -H "accept: application/json" \
                             --data-urlencode "bank_name=$bank" --data-urlencode "city=$city" \
                             --data-urlencode "offset=$offset" --data-urlencode "limit=$limit" \
