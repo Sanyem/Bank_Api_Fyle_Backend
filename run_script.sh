@@ -27,20 +27,20 @@ echo $ifsc_res | python -m json.tool
 # Sample values for limit, offset, bank, city
 limit=10
 offset=0
-bank="CENTRAL BANK OF INDIA"
-city="ROORKEE"
-name_city=`curl -G -s -X GET "$SITE_BASE_URL/bank/" -H "accept: application/json" \
+bank="BANK OF BARODA"
+city="MUMBAI"
+name_city=`curl -G -s -X GET "$SITE_BASE_URL/server/" -H "accept: application/json" \
                             --data-urlencode "bank_name=$bank" --data-urlencode "city=$city" \
                             --data-urlencode "offset=$offset" --data-urlencode "limit=$limit" \
                             -H "Authorization: JWT $token"`
 
-echo "\n The data entered is: limit=$limit offset=$offset bank=$bank city=$city\n"
+echo "The data entered is: limit=$limit offset=$offset bank=$bank city=$city\n"
 echo $name_city | python -m json.tool
 
 
-offset=5
-echo "\n Now offset is 10. Data: limit=$limit offset=$offset bank=$bank city=$city\n"
-name_city_2=`curl -G -s -X GET "$SITE_BASE_URL/bank/" -H "accept: application/json" \
+offset=10
+echo "Data: limit=$limit offset=$offset bank=$bank city=$city\n"
+name_city_2=`curl -G -s -X GET "$SITE_BASE_URL/server/" -H "accept: application/json" \
                             --data-urlencode "bank_name=$bank" --data-urlencode "city=$city" \
                             --data-urlencode "offset=$offset" --data-urlencode "limit=$limit" \
                             -H "Authorization: JWT $token"`
