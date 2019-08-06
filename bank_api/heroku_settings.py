@@ -4,7 +4,7 @@ import dj_database_url
 from .settings import *
 
 ALLOWED_HOSTS = [
-    'https://pacific-stream-89493.herokuapp.com'
+    'guarded-reaches-45302.herokuapp.com'
 ]
 
 DATABASES = {}
