@@ -17,17 +17,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import permissions
 from rest_framework_jwt.views import obtain_jwt_token, refresh_jwt_token
-UI_view = get_schema_view(
-   openapi.Info(
-      title="Bank-API-Fyle",
-      default_version='1',
-      description="Description",
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="guptasanyem@gmail.com"),
-   ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
-)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('server/', include('server.urls')),
