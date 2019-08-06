@@ -6,6 +6,8 @@ import sys
 
 def main():
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'bank_api.settings')
+    if os.getenv('mode') == 'STAGING':
+        os.environ['DJANGO_SETTINGS_MODULE'] = 'bank_api.heroku_settings'
     try:
         from django.core.management import execute_from_command_line
     except ImportError as exc:
