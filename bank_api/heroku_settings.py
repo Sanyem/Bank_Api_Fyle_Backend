@@ -12,6 +12,8 @@ DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+SECRET_KEY = os.environ["SECRET_KEY"]
+
 # JWT settings
 JWT_AUTH = {
     'JWT_ENCODE_HANDLER':
